@@ -1,13 +1,48 @@
-Version: 1.0
+#Codigo para problema 1
 
-RestoreWorkspace: Default
-SaveWorkspace: Default
-AlwaysSaveHistory: Default
+mis_dades <- mtcars
+mis_dades
+dim(mis_dades)
+names(mis_dades)
 
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
+mis_dades$qsec
 
-RnwWeave: Sweave
-LaTeX: pdfLaTeX
+x <- mis_dades$qsec
+sum(x)/length(x)
+mean(x)
+
+mis_dades$drat
+sort(mis_dades$drat)
+median(mis_dades$drat)
+
+#Primer quartil
+
+quantile(mis_dades$drat,0.25)
+quantile(mis_dades$drat,0.75)
+
+#Percentil
+
+quantile(mis_dades$mpg,0.18)
+
+#Rango interquartilico
+
+quantile(mis_dades$mpg,0.25)
+quantile(mis_dades$mpg,0.75)
+
+quantile(mis_dades$mpg, 0.75)-quantile(mis_dades$mpg,0.25)
+IQR(mis_dades$mpg)
+boxplot(mis_dades$mpg)
+
+mis_dades$cyl
+sort(mis_dades$cyl)
+median(mis_dades$cyl)
+mean(mis_dades$cyl)
+IQR(mis_dades$cyl)
+
+#Desviacion tipica
+
+sd(mis_dades$cyl)
+var(mis_dades$qsec)
+x<-mis_dades$qsec
+sum((x-mean(x))^2)/(length(x)-1)
+var(x)
